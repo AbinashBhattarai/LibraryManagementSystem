@@ -1,7 +1,7 @@
 ﻿@model List<Lender>
 
 @{
-    ViewData["Title"] = "List Lenders";
+    ViewData["Title"] = "List Defaulters";
 }
 
 <partial name="_Notification" />
@@ -9,33 +9,33 @@
 <div class="container">
     <div class="row pb-4 mt-3">
         <div class="col-3">
-            <h3>Lendedrs List</h3>
+            <h3>Defaulters List</h3>
         </div>
-        <form asp-action="Index" class="d-flex col-6">
-            <input name="Code" class="form-control me-2 fs-5 text-uppercase" type="search" placeholder="Code" aria-label="Search">
+        <form method="get" asp-action="GetDefaulter" class="d-flex col-6">
+            <input name="CustomerCode" class="form-control me-2 fs-5 text-uppercase" type="search" placeholder="Code" aria-label="Search">
             <button class="btn btn-primary fs-5" type="submit">Search</button>
         </form>
         <div class="col-3 text-end">
-            <a asp-controller="Book" asp-action="Create" class="btn btn-primary fs-5">Check Defaulter</a>
+            <a asp-controller="Lender" asp-action="Index" class="btn btn-primary fs-5">Lenders List</a>
         </div>
     </div>
     <button class="btn btn-primary fs-5">
-        <a asp-action="Index" class="text-white text-decoration-none">Full List</a>
+        <a asp-action="GetDefaulter" class="text-white text-decoration-none">Full List</a>
     </button>
     <table class="table table-primary table-hover table-bordered border-primary fw-bold text-center mt-3">
         <thead class="text-primary">
             <tr>
                 <td>
-                    CustomerId
+                    Customer Code
                 </td>
                 <td>
-                    BookId
+                    Book Code
                 </td>
                 <td>
-                    FromDate
+                    From Date
                 </td>
                 <td>
-                    ToDate
+                    To Date
                 </td>
                 <td>
                     Penalty
@@ -50,10 +50,10 @@
             {
                 <tr>
                     <td>
-                        @list.CustomerId
+                        @list.Customer.Code
                     </td>
                     <td>
-                        @list.BookId
+                        @list.Book.Code
                     </td>
                     <td>
                         @list.FromDate

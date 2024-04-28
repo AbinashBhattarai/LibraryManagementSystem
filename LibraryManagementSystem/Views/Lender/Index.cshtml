@@ -12,7 +12,7 @@
             <h3>Lendedrs List</h3>
         </div>
         <form asp-action="Index" class="d-flex col-6">
-            <input name="Code" class="form-control me-2 fs-5 text-uppercase" type="search" placeholder="Code" aria-label="Search">
+            <input name="CustomerCode" class="form-control me-2 fs-5 text-uppercase" type="search" placeholder="Code" aria-label="Search">
             <button class="btn btn-primary fs-5" type="submit">Search</button>
         </form>
         <div class="col-3 text-end">
@@ -26,16 +26,16 @@
         <thead class="text-primary">
             <tr>
                 <td>
-                    CustomerId
+                    Customer Code
                 </td>
                 <td>
-                    BookId
+                    Book Code
                 </td>
                 <td>
-                    FromDate
+                    From Date
                 </td>
                 <td>
-                    ToDate
+                    To Date
                 </td>
                 <td>
                     Penalty
@@ -50,10 +50,10 @@
             {
                 <tr>
                     <td>
-                        @list.CustomerId
+                        @list.Customer.Code
                     </td>
                     <td>
-                        @list.BookId
+                        @list.Book.Code
                     </td>
                     <td>
                         @list.FromDate

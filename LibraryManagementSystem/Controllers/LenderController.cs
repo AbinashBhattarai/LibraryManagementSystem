@@ -12,19 +12,43 @@ namespace LibraryManagementSystem.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(string customerCode)
         {
-            var lenders = _context.Lender.ToList();
-            LenderViewModel lenderViewModel = new LenderViewModel();
+            var lenders = _context.Lender
+                .Include(x => x.Customer)
+                .Include(x => x.Book)
+                .ToList();
+            if (!string.IsNullOrEmpty(customerCode))
+            {
+                lenders = _context.Lender
+                .Include(x => x.Customer)
+                .Where(x => x.Customer.Code == customerCode)
+                .Include(x => x.Book)
+                .ToList();
+                return View(lenders);
+            }
             return View(lenders);
         }
 
         [HttpGet]
-        public IActionResult GetDefaulter()
+        public IActionResult GetDefaulter(string customerCode)
         {
             var defaulters = _context.Lender
                 .Where(x => x.Penalty > 0)
+                .Include(x => x.Customer)
+                .Include(x => x.Book)
                 .ToList();
+
+            if (!string.IsNullOrEmpty(customerCode))
+            {
+                defaulters = _context.Lender
+                .Include(x => x.Customer)
+                .Where(x => x.Customer.Code == customerCode)
+                .Include(x => x.Book)
+                .Where(x => x.Penalty > 0)
+                .ToList();
+                return View(defaulters);
+            }
             return View(defaulters);
         }
     }
