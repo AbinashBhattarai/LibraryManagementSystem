@@ -1,0 +1,35 @@
+﻿@model LenderViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering;
+
+@{
+    ViewData["Title"] = "Issue Page";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="m-3 border rounded-3 shadow-lg w-50 mx-auto p-4"> 
+        <p class="fs-4 fw-bold mb-3">Search</p>
+        <form method="get" asp-controller="Issue" asp-action="IssueBook" class="form-control mb-3">
+            <p class="fs-5 fw-bold mb-0">Customer Code</p>
+            <div class="mb-5">
+                <select name="Customer" id="Customer" asp-items="@(new SelectList (Model.Customer, "Id", "Code"))" class="fs-5 w-100">
+                </select>
+            </div>
+            <p class="fs-5 fw-bold mb-0">Book Code</p>
+            <div class="d-flex">
+                <input name="BookCode" class="form-control me-2 text-uppercase fs-5" type="search" placeholder="Code" aria-label="Search">
+                <button class="btn btn-primary fs-5" type="submit">Search</button>
+            </div>
+        </form>
+        <a asp-controller="Issue" asp-action="Index" class="btn btn-primary">Back</a>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script>
+        $('#linkIssue').addClass('active');
+    </script>
+}

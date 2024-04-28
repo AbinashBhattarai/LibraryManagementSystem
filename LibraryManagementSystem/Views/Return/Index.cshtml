@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Return Page";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="mb-5 mt-3 text-center">
+        <h1>Return Book</h1>
+    </div>
+    <div class="m-3 border rounded-3 shadow-lg w-50 mx-auto p-4">
+        <p class="fw-bold mb-3 fs-3">Search</p>
+        <form method="get" asp-controller="Return" asp-action="GetIssuedBooks" class="form-control mb-5">
+            <p class="fw-bold mb-0 fs-5">Customer Code</p>
+            <div class="mb-3">
+                <input name="CustomerCode" class="form-control me-2 text-uppercase fs-5" type="search" placeholder="Code" aria-label="Search">
+            </div>
+            <button class="btn btn-primary fs-5" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#linkReturn').addClass('active');
+    </script>
+}
+

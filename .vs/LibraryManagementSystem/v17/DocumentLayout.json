@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\work\\project\\asp.net core\\librarymanagementsystem\\librarymanagementsystem\\views\\lender\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\lender\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\work\\project\\asp.net core\\librarymanagementsystem\\librarymanagementsystem\\controllers\\returncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\controllers\\returncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\work\\project\\asp.net core\\librarymanagementsystem\\librarymanagementsystem\\controllers\\lendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\controllers\\lendercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\work\\project\\asp.net core\\librarymanagementsystem\\librarymanagementsystem\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\work\\project\\asp.net core\\librarymanagementsystem\\librarymanagementsystem\\models\\lender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\models\\lender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\work\\project\\asp.net core\\librarymanagementsystem\\librarymanagementsystem\\views\\lender\\getdefaulter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\views\\lender\\getdefaulter.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|c:\\work\\project\\asp.net core\\librarymanagementsystem\\librarymanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F22251EB-E230-4583-B771-72D57E7CB845}|LibraryManagementSystem\\LibraryManagementSystem.csproj|solutionrelative:librarymanagementsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Customer.cs",
+              "ToolTip": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Customer.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Models\\Customer.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T17:28:14.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Lender.cs",
+              "DocumentMoniker": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Lender.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Models\\Lender.cs",
+              "ToolTip": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Models\\Lender.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Models\\Lender.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T17:28:07.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Lender\\Index.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Lender\\Index.cshtml",
+              "ToolTip": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Lender\\Index.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Lender\\Index.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEkAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-27T17:24:46.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetDefaulter.cshtml",
+              "DocumentMoniker": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Lender\\GetDefaulter.cshtml",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Views\\Lender\\GetDefaulter.cshtml",
+              "ToolTip": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Views\\Lender\\GetDefaulter.cshtml",
+              "RelativeToolTip": "LibraryManagementSystem\\Views\\Lender\\GetDefaulter.cshtml",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAFYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-27T17:23:54.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReturnController.cs",
+              "DocumentMoniker": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\ReturnController.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Controllers\\ReturnController.cs",
+              "ToolTip": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\ReturnController.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Controllers\\ReturnController.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwBcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T17:03:38.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T17:02:59.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LenderController.cs",
+              "DocumentMoniker": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\LenderController.cs",
+              "RelativeDocumentMoniker": "LibraryManagementSystem\\Controllers\\LenderController.cs",
+              "ToolTip": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\Controllers\\LenderController.cs",
+              "RelativeToolTip": "LibraryManagementSystem\\Controllers\\LenderController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBMAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T16:56:15.218Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

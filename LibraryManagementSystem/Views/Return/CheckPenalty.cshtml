@@ -1,0 +1,40 @@
+﻿@model LenderViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering;
+
+@{
+    ViewData["Title"] = "Return Page";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="m-3 border rounded-3 shadow-lg w-50 mx-auto p-4">
+        <form method="post" asp-controller="Return" asp-action="ReturnBook" class="form-control mb-3">
+            <div class="mb-3">
+                <p class="fs-5 fw-bold mb-0">Customer</p>
+                <select name="Customer" id="Customer" asp-items="@(new SelectList (Model.Customer, "Id", "Code"))" class="fs-5 w-100 mb-3">
+                </select>
+            </div>
+            <p class="fw-bold mb-0 fs-5">Select Book</p>
+            <div class="mb-3">
+                <select name="Book" id="Book" asp-items="@(new SelectList (Model.Books, "Id", "Code"))" class="fs-5 w-100 mb-3">
+                </select>
+            </div>
+            <p class="fw-bold mb-0 fs-5">Total Penalty</p>
+            <div class="mb-3">
+                <input type="text" readonly value="@Model.Penalty" class="fs-5 p-1" />
+            </div>
+            <button class="btn btn-primary fs-5" type="submit">Return Book</button>
+        </form>
+        <div class="text-end">
+            <a asp-controller="Return" asp-action="GetIssuedBooks" asp-route-customerCode="@Model.Customer[0].Code" class="btn btn-primary fs-5">Back</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#linkReturn').addClass('active');
+    </script>
+}
