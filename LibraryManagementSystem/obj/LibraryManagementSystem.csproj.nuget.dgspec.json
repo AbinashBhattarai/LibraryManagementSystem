@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\LibraryManagementSystem.csproj": {}
+    "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryMS\\LibraryManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\LibraryManagementSystem.csproj": {
+    "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryMS\\LibraryManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\LibraryManagementSystem.csproj",
+        "projectUniqueName": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryMS\\LibraryManagementSystem.csproj",
         "projectName": "LibraryManagementSystem",
-        "projectPath": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\LibraryManagementSystem.csproj",
+        "projectPath": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryMS\\LibraryManagementSystem.csproj",
         "packagesPath": "C:\\Users\\Abinash\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryManagementSystem\\obj\\",
+        "outputPath": "C:\\Work\\Project\\Asp.Net Core\\LibraryManagementSystem\\LibraryMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Abinash\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,22 +44,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[8.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[8.0.4, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

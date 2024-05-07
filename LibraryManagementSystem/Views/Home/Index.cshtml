@@ -1,66 +1,8 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
-
-<div class="pt-5 row">
-    <a asp-controller="Book" asp-action="Index" class="text-decoration-none col-3 mx-5 mt-5">
-        <div class="border border-primary border-4 p-0 text-center fw-bold">
-            <div class="bg-primary fs-3 text-white pt-2 pb-1">
-                <p class="">Total Books</p>
-            </div>
-            <div class="pt-4 fs-1 pb-3 text-black">
-                <p>@ViewData["bookCount"]</p>
-            </div>
-        </div>
-    </a>
-    <a asp-controller="Customer" asp-action="Index" class="text-decoration-none col-3 mx-5 mt-5">
-        <div class="border border-primary border-4 p-0 text-center fw-bold">
-            <div class="bg-primary fs-3 text-white pt-2 pb-1">
-                <p class="">Total Customers</p>
-            </div>
-            <div class="pt-4 fs-1 pb-3 text-black">
-                <p>@ViewData["customerCount"]</p>
-            </div>
-        </div>
-    </a>
-    <a asp-controller="Book" asp-action="Index" class="text-decoration-none col-3 mx-5 mt-5">
-        <div class="border border-primary border-4 p-0 text-center fw-bold">
-            <div class="bg-primary fs-3 text-white pt-2 pb-1">
-                <p class="">Total Issue</p>
-            </div>
-            <div class="pt-4 fs-1 pb-3 text-black">
-                <p>@ViewData["IssueCount"]</p>
-            </div>
-        </div>
-    </a>
-    <a asp-controller="Lender" asp-action="Index" class="text-decoration-none col-3 mx-5 mt-5">
-        <div class="border border-primary border-4 p-0 text-center fw-bold">
-            <div class="bg-primary fs-3 text-white pt-2 pb-1">
-                <p class="">Total Defaulters</p>
-            </div>
-            <div class="pt-4 fs-1 pb-3 text-black">
-                <p>@ViewData["defaulterCount"]</p>
-            </div>
-        </div>
-    </a>
-    <a asp-controller="Book" asp-action="Index" class="text-decoration-none col-3 mx-5 mt-5">
-        <div class="border border-primary border-4 p-0 text-center fw-bold">
-            <div class="bg-primary fs-3 text-white pt-2 pb-1">
-                <p class="">Total Penalty</p>
-            </div>
-            <div class="pt-4 fs-1 pb-3 text-black">
-                <p>@ViewData["totalPenalty"]</p>
-            </div>
-        </div>
-    </a>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-
-@section Scripts
-{
-    <script>
-        $('#linkDashboard').addClass('active');
-    </script>
-}
-

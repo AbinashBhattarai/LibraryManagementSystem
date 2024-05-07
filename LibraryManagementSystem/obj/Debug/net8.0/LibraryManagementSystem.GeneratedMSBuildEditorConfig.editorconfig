@@ -9,103 +9,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LibraryManagementSystem
 build_property.RootNamespace = LibraryManagementSystem
-build_property.ProjectDir = C:\Work\Project\Asp.Net Core\LibraryManagementSystem\LibraryManagementSystem\
+build_property.ProjectDir = C:\Work\Project\Asp.Net Core\LibraryManagementSystem\LibraryMS\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Work\Project\Asp.Net Core\LibraryManagementSystem\LibraryManagementSystem
+build_property.MSBuildProjectDirectory = C:\Work\Project\Asp.Net Core\LibraryManagementSystem\LibraryMS
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Book/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Book/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Book/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Book/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Customer/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Customer/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Customer/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Customer/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Home/Index.cshtml]
+[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryMS/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Issue/GetBooks.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVcR2V0Qm9va3MuY3NodG1s
+[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryMS/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Issue/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Issue/IssueBook.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXNzdWVcSXNzdWVCb29rLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Lender/GetDefaulter.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVuZGVyXEdldERlZmF1bHRlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Lender/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGVuZGVyXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Return/CheckPenalty.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuXENoZWNrUGVuYWx0eS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Return/GetIssuedBooks.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuXEdldElzc3VlZEJvb2tzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Return/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV0dXJuXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/Error.cshtml]
+[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryMS/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_Notification.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3RpZmljYXRpb24uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryMS/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/_ViewImports.cshtml]
+[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryMS/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/_ViewStart.cshtml]
+[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryMS/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryManagementSystem/Views/Shared/_Layout.cshtml]
+[C:/Work/Project/Asp.Net Core/LibraryManagementSystem/LibraryMS/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-spbznog2vl
