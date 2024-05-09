@@ -1,0 +1,45 @@
+﻿@model Book
+
+@{
+    ViewData["Title"] = "Add Book";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="pb-3">
+        <a asp-controller="Book" asp-action="Index" class="btn btn-danger">Back To List</a>
+    </div>
+    <div class="pb-3">
+        <h3>
+            Add New Book
+        </h3>
+    </div>
+    <form method="post" asp-controller="Book" asp-action="Create" class="form-control w-50 shadow p-3">
+        <div class="mb-3">
+            <label asp-for="ISBN" class="p-1 fs-5"></label>
+            <input asp-for="ISBN" class="form-control fs-5 text-uppercase" />
+            <span asp-validation-for="ISBN" class="text-danger fw-normal"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Title" class="p-1 fs-5"></label>
+            <input asp-for="Title" class="form-control fs-5 text-uppercase" />
+            <span asp-validation-for="Title" class="text-danger fw-normal"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Author" class="p-1 fs-5"></label>
+            <input asp-for="Author" class="form-control fs-5 text-uppercase" />
+            <span asp-validation-for="Author" class="text-danger fw-normal"></span>
+        </div>
+        <button type="submit" class="btn btn-secondary">Add Book</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+        <script>
+            $('#linkBooks').addClass('active');
+        </script>
+    }
+}

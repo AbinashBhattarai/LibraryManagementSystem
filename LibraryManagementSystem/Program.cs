@@ -1,7 +1,14 @@
+using LibraryManagementSystem.DAL;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddSingleton<Book_DAL>();
+builder.Services.AddSingleton<Customer_DAL>();
 
 var app = builder.Build();
 

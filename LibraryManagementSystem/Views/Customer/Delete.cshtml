@@ -1,0 +1,49 @@
+﻿@model Customer
+
+@{
+    ViewData["Title"] = "Delete Customer";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="pb-3">
+        <a asp-controller="Customer" asp-action="Index" class="btn btn-danger">Back To List</a>
+    </div>
+    <div class="pb-3">
+        <h3>
+            Delete Customer
+        </h3>
+    </div>
+    <form method="post" asp-controller="Customer" asp-action="Delete" class="form-control w-50 shadow p-3">
+        <input asp-for="Id" hidden />
+        <div class="mb-3">
+            <label asp-for="Code" class="p-1 fs-5"></label>
+            <input asp-for="Code" disabled class="form-control fs-5 text-uppercase" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name" class="p-1 fs-5"></label>
+            <input asp-for="Name" disabled class="form-control fs-5 text-uppercase" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="p-1 fs-5"></label>
+            <input asp-for="Email" disabled class="form-control fs-5" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Phone" class="p-1 fs-5"></label>
+            <input asp-for="Phone" disabled class="form-control fs-5 text-uppercase" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Address" class="p-1 fs-5"></label>
+            <input asp-for="Address" disabled class="form-control fs-5 text-uppercase" />
+        </div>
+        <button type="submit" class="btn btn-secondary">Delete Customer</button>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#linkCustomers').addClass('active');
+    </script>
+}

@@ -1,0 +1,41 @@
+﻿@model Book
+
+@{
+    ViewData["Title"] = "Delete Book";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="pb-3">
+        <a asp-controller="Book" asp-action="Index" class="btn btn-danger">Back To List</a>
+    </div>
+    <div class="pb-3">
+        <h3>
+            Delete Book
+        </h3>
+    </div>
+    <form method="post" asp-controller="Book" asp-action="Delete" class="form-control w-50 shadow p-3">
+        <input asp-for="Id" hidden />
+        <div class="mb-3">
+            <label asp-for="ISBN" class="p-1 fs-5"></label>
+            <input asp-for="ISBN" readonly class="form-control fs-5 text-uppercase" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Title" class="p-1 fs-5"></label>
+            <input asp-for="Title" readonly class="form-control fs-5 text-uppercase" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Author" class="p-1 fs-5"></label>
+            <input asp-for="Author" readonly class="form-control fs-5 text-uppercase" />
+        </div>
+        <button type="submit" class="btn btn-secondary">Delete Book</button>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#linkBooks').addClass('active');
+    </script>
+}

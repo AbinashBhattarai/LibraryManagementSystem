@@ -5,7 +5,7 @@
 
 # dotenv files
 .env
-
+.github
 # User-specific files
 *.rsuser
 *.suo

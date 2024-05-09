@@ -1,3 +1,9 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 html {
   font-size: 14px;
 }
@@ -9,7 +15,7 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #81878f;
 }
 
 html {
@@ -18,5 +24,18 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+.active {
+    border-bottom: 2px solid black;
+}
+.search {
+    border: none;
+    outline: none;
+}
+.logo {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    margin: 0;
 }

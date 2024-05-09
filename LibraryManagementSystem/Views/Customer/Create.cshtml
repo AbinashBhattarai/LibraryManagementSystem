@@ -1,0 +1,54 @@
+﻿@model Customer
+
+@{
+    ViewData["Title"] = "Add Customer";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="pb-3">
+        <a asp-controller="Customer" asp-action="Index" class="btn btn-danger">Back To List</a>
+    </div>
+    <div class="pb-3">
+        <h3>
+            Add New Customer
+        </h3>
+    </div>
+    <form method="post" asp-controller="Customer" asp-action="Create" class="form-control w-50 shadow p-3">
+        <div class="mb-3">
+            <label asp-for="Code" class="p-1 fs-5"></label>
+            <input asp-for="Code" readonly value="@ViewBag.Code" class="form-control fs-5 text-uppercase" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name" class="p-1 fs-5"></label>
+            <input asp-for="Name" class="form-control fs-5 text-uppercase" />
+            <span asp-validation-for="Name" class="text-danger fw-normal"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="p-1 fs-5"></label>
+            <input asp-for="Email" class="form-control fs-5" />
+            <span asp-validation-for="Email" class="text-danger fw-normal"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Phone" class="p-1 fs-5"></label>
+            <input asp-for="Phone" class="form-control fs-5 text-uppercase" />
+            <span asp-validation-for="Phone" class="text-danger fw-normal"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Address" class="p-1 fs-5"></label>
+            <input asp-for="Address" class="form-control fs-5 text-uppercase" />
+            <span asp-validation-for="Address" class="text-danger fw-normal"></span>
+        </div>
+        <button type="submit" class="btn btn-secondary">Add Customer</button>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+        <script>
+            $('#linkCustomers').addClass('active');
+        </script>
+    }
+}
