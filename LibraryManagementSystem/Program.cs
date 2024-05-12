@@ -5,10 +5,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+                .AddJsonOptions(jsonOptions =>
+{
+    jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
 
 builder.Services.AddSingleton<Book_DAL>();
 builder.Services.AddSingleton<Customer_DAL>();
+builder.Services.AddSingleton<Lender_DAL>();
+
 
 var app = builder.Build();
 

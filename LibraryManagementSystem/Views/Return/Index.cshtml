@@ -1,0 +1,86 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering;
+
+@{
+    ViewData["Title"] = "Return Book";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="m-3 border rounded-3 shadow-lg w-50 mx-auto p-4">
+        <form method="post" asp-controller="Return" asp-action="RemoveLender" class="form-control pb-3">
+            <div class="mb-3">
+                <label for="Customer" class="fs-5 fw-bold">Customer</label>
+                <select name="Customer" id="Customer" class="fs-5 p-2 text-uppercase w-100 mb-3">
+                    <option>---Select Customer---</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="Book" class="fs-5 fw-bold">Book</label>
+                <select name="Book" id="Book" class="fs-5 p-2 text-uppercase w-100 mb-3">
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="fs-5 fw-bold">Penalty</label>
+                <input id="Penalty" value="" class="fs-5 p-2 text-uppercase w-100 mb-3" />
+            </div>
+            <button class="btn btn-secondary" type="submit">Return Book</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#linkReturn').addClass('active');
+
+        $(document).ready(function () {
+            GetCustomer();
+
+            $('#Customer').change(function() {
+                var id = $('#Customer').val();
+                $('#Book').empty();
+                $('#Book').append('<Option>---Select Book---</Option>');
+                fetch()
+                $.ajax({
+                    type: 'GET',
+                    url: '/Return/GetBookByCustomer?id='+id,
+                    success: function (result) {
+                        $.each(result, function (key, data) {
+                            $('#Book').append('<Option value="'+data.Id+'">'+data.ISBN+' ('+data.Title+')</Option>')
+                        });
+                    }
+                });
+            })
+
+            $('#Book').change(function() {
+                var customerId = $('#Customer').val();
+                var bookId = $('#Book').val();
+                $('#Penalty').empty();
+                fetch()
+                $.ajax({
+                    type: 'GET',
+                    url: '/Return/CheckPenalty?customerId=' + customerId + '&bookId=' + bookId,
+                    success: function (result) {
+                        $('#Penalty').val(result.Penalty)
+                    }
+                });
+            })
+        });
+
+        function GetCustomer() {
+            $.ajax({
+                type: 'GET',
+                url: '/Return/GetCustomer',
+                dataType: 'json',
+                success: function (result) {
+                    $.each(result, function (key, data) {
+                        $('#Customer').append('<Option value="' + data.Id + '">' + data.Code + '</Option>')
+                    });
+                }
+            });
+        }
+
+    </script>
+}
+

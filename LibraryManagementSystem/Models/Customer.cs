@@ -13,6 +13,7 @@ namespace LibraryManagementSystem.Models
         [Required]
         public string? Email { get; set; }
         [Required]
+        [MaxLength(10)]
         public string? Phone { get; set; }
         [Required]
         public string? Address { get; set; }

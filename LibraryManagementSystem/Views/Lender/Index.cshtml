@@ -1,0 +1,101 @@
+﻿@model List<LenderViewModel>
+
+@{
+    ViewData["Title"] = "Lender List";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-3">
+            <h3>Lender List</h3>
+        </div>
+        <form method="get" asp-controller="Lender" asp-action="Index" class="d-flex col-6">
+            <input name="Code" class="form-control me-2 text-uppercase fs-5" type="search" placeholder="Customer Code" aria-label="Search">
+            <button class="btn btn-secondary" type="submit">Search</button>
+        </form>
+        <div class="col-3 text-end">
+            <a asp-controller="Return" asp-action="Index" class="btn btn-secondary">Return Book</a>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between mt-2">
+        <div>
+            <a asp-controller="Lender" asp-action="Index" class="btn btn-secondary">Full List</a>
+        </div>
+        <div>
+            <ul class="pagination d-flex align-items-center gap-3">
+                <li class="page-item"><a class="page-link border-dark fw-bold btn" href="#">&laquo;</a></li>
+                Page 1 of 10
+                <li class="page-item"><a class="page-link border-dark fw-bold btn" href="#">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+
+    @if (Model.Any() && Model != null)
+    {
+        <table class="table table-bordered border-dark table-hover text-center fs-5 mt-2">
+            <thead class="fw-bold">
+                <tr>
+                    <td>
+                        S.N.
+                    </td>
+                    <td>
+                        Customer Code
+                    </td>
+                    <td>
+                        Customer Name
+                    </td>
+                    <td>
+                        ISBN
+                    </td>
+                    <td>
+                        Book Title
+                    </td>
+                    <td>
+                        Penalty
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i + 1)
+                        </td>
+                        <td>
+                            @Model[i].CustomerCode?.ToUpper()
+                        </td>
+                        <td>
+                            @Model[i].CustomerName?.ToUpper()
+                        </td>
+                        <td>
+                            @Model[i].ISBN?.ToUpper()
+                        </td>
+                        <td>
+                            @Model[i].Title?.ToUpper()
+                        </td>
+                        <td>
+                            @Model[i].Penalty
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="fs-3 text-danger text-center mt-5">
+            No Data Found!
+        </div>
+    }
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#linkLenders').addClass('active');
+    </script>
+}
+

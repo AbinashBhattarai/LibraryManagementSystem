@@ -1,0 +1,36 @@
+﻿@model IssueViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering;
+
+@{
+    ViewData["Title"] = "Issue Book";
+}
+
+<partial name="_Notification" />
+
+<div class="container">
+    <div class="m-3 border rounded-3 shadow-lg w-50 mx-auto p-4">
+        <form method="post" asp-controller="Issue" asp-action="CreateIssue" class="form-control pb-3">
+            <div class="mb-3">
+                <label asp-for="Customers" class="fs-5 fw-bold"></label>
+                <select name="Customer" id="Customer" asp-items="@(new SelectList (Model.Customers, "Id", "Code"))" class="fs-5 p-2 text-uppercase w-100 mb-3">
+                    <option>---Select Customer</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Books" class="fs-5 fw-bold"></label>
+                <select name="Book" id="Book" asp-items="@(new SelectList (Model.Books, "Id", "ISBN"))" class="fs-5 p-2 text-uppercase w-100 mb-3">
+                    <option>---Select Book</option>
+                </select>
+            </div>
+            <button class="btn btn-secondary" type="submit">Issue Book</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $('#linkIssue').addClass('active');
+    </script>
+}
+

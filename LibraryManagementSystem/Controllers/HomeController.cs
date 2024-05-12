@@ -1,3 +1,4 @@
+using LibraryManagementSystem.DAL;
 using LibraryManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,14 +8,55 @@ namespace LibraryManagementSystem.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly Book_DAL _bookDAL;
+        private readonly Customer_DAL _customerDAL;
+        private readonly Lender_DAL _lenderDAL;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, Book_DAL bookDAL, Customer_DAL customerDAL, Lender_DAL lenderDAL)
         {
             _logger = logger;
+            _bookDAL = bookDAL;
+            _customerDAL = customerDAL;
+            _lenderDAL = lenderDAL;
         }
 
         public IActionResult Index()
         {
+            var books = _bookDAL.GetAllBooks();
+            var customers = _customerDAL.GetAllCustomers();
+            var lenders = _lenderDAL.GetAllLenders();
+
+            int defaulterCount = 0;
+            int totalPenalty = 0;
+            foreach (var lender in lenders)
+            {
+                if (lender.ReturnDate < DateTime.Now)
+                {
+                    TimeSpan duration = DateTime.Now - lender.ReturnDate;
+                    double days = duration.TotalDays;
+                    lender.Penalty = (int)days * 5;
+
+                    //_context.SaveChanges();
+                    defaulterCount++;
+                    totalPenalty += lender.Penalty;
+
+                    try
+                    {
+                        bool result = _lenderDAL.UpdatePenalty(lender.BookId, lender.CustomerId, lender.Penalty);
+                    }
+                    catch
+                    {
+                        TempData["error"] = "Database Exception occured";
+                        return View();
+                    }
+                }
+            }
+
+            ViewBag.bookCount = books.Count;
+            ViewBag.customerCount = customers.Count;
+            ViewBag.issueCount = lenders.Count;
+            ViewBag.totalPenalty = totalPenalty;
+            ViewBag.defaulterCount = defaulterCount;
             return View();
         }
 
