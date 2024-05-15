@@ -12,5 +12,7 @@ namespace LibraryManagementSystem.Models
         public string? Title { get; set; }
         [Required]
         public string? Author { get; set; }
+        [Required]
+        public int Quantity { get; set; }
     }
 }

@@ -26,7 +26,8 @@ namespace LibraryManagementSystem.DAL
                         Id = Convert.ToInt32(dr["Id"]),
                         ISBN = dr["ISBN"].ToString(),
                         Title = dr["Title"].ToString(),
-                        Author = dr["Author"].ToString()
+                        Author = dr["Author"].ToString(),
+                        Quantity = Convert.ToInt32(dr["Quantity"])
                     });
                 }
                 _connection.Close();
@@ -47,6 +48,7 @@ namespace LibraryManagementSystem.DAL
                 _command.Parameters.AddWithValue("@ISBN", book.ISBN);
                 _command.Parameters.AddWithValue("@Title", book.Title);
                 _command.Parameters.AddWithValue("@Author", book.Author);
+                _command.Parameters.AddWithValue("@Quantity", book.Quantity);
 
                 _connection.Open();
                 rowAffected = _command.ExecuteNonQuery();
@@ -75,6 +77,7 @@ namespace LibraryManagementSystem.DAL
                     book.ISBN = dr["ISBN"].ToString();
                     book.Title = dr["Title"].ToString();
                     book.Author = dr["Author"].ToString();
+                    book.Quantity = Convert.ToInt32(dr["Quantity"]);
                 }
                 _connection.Close();
             }
@@ -95,6 +98,7 @@ namespace LibraryManagementSystem.DAL
                 _command.Parameters.AddWithValue("@ISBN", book.ISBN);
                 _command.Parameters.AddWithValue("@Title", book.Title);
                 _command.Parameters.AddWithValue("@Author", book.Author);
+                _command.Parameters.AddWithValue("@Quantity", book.Quantity);
 
                 _connection.Open();
                 rowAffected = _command.ExecuteNonQuery();
@@ -143,7 +147,8 @@ namespace LibraryManagementSystem.DAL
                         Id = Convert.ToInt32(dr["Id"]),
                         ISBN = dr["ISBN"].ToString(),
                         Title = dr["Title"].ToString(),
-                        Author = dr["Author"].ToString()
+                        Author = dr["Author"].ToString(),
+                        Quantity = Convert.ToInt32(dr["Quantity"])
                     });
                 }
                 _connection.Close();

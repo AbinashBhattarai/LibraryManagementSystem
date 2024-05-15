@@ -24,16 +24,16 @@ namespace LibraryManagementSystem.DAL
                 {
                     lenderList.Add(new LenderViewModel
                     {
+                        CustomerId = Convert.ToInt32(dr["CustomerId"]),
                         CustomerCode = dr["Code"].ToString(),
                         CustomerName = dr["Name"].ToString(),
+                        BookId = Convert.ToInt32(dr["BookId"]),
                         ISBN = dr["ISBN"].ToString(),
                         Title = dr["Title"].ToString(),
-                        BookId = Convert.ToInt32(dr["BookId"]),
-                        CustomerId = Convert.ToInt32(dr["CustomerId"]),
                         IssueDate = Convert.ToDateTime(dr["IssueDate"]),
                         ReturnDate = Convert.ToDateTime(dr["ReturnDate"]),
                         Penalty = Convert.ToInt32(dr["Penalty"]),
-                    });
+                    }); ;
                 }
                 _connection.Close();
             }
@@ -59,8 +59,11 @@ namespace LibraryManagementSystem.DAL
                     lenderList.Add(new LenderViewModel
                     {
                         CustomerCode = dr["Code"].ToString(),
+                        CustomerName = dr["Name"].ToString(),
                         ISBN = dr["ISBN"].ToString(),
                         Title = dr["Title"].ToString(),
+                        IssueDate = Convert.ToDateTime(dr["IssueDate"]),
+                        ReturnDate = Convert.ToDateTime(dr["ReturnDate"]),
                         Penalty = Convert.ToInt32(dr["Penalty"]),
                     });
                 }
@@ -92,7 +95,7 @@ namespace LibraryManagementSystem.DAL
             return (rowAffected > 0);
         }
 
-        public bool DeleteLender(int customerId, int bookId)
+        public bool DeleteLender(Lender lender)
         {
             int rowAffected = 0;
 
@@ -102,8 +105,8 @@ namespace LibraryManagementSystem.DAL
                 _command.CommandType = CommandType.StoredProcedure;
                 _command.CommandText = "usp_DeleteLender";
 
-                _command.Parameters.AddWithValue("@CustomerId", customerId);
-                _command.Parameters.AddWithValue("@BookId", bookId);
+                _command.Parameters.AddWithValue("@CustomerId", lender.CustomerId);
+                _command.Parameters.AddWithValue("@BookId", lender.BookId);
 
                 _connection.Open();
                 rowAffected = _command.ExecuteNonQuery();
@@ -112,7 +115,31 @@ namespace LibraryManagementSystem.DAL
             return (rowAffected > 0);
         }
 
-        public List<Book> GetBookByCustomer(int id)
+
+        public bool UpdateLender(Lender lender)
+        {
+            int rowAffected = 0;
+
+            using (SqlConnection _connection = new SqlConnection(Connection_DAL.ConnectionString()))
+            {
+                SqlCommand _command = _connection.CreateCommand();
+                _command.CommandType = CommandType.StoredProcedure;
+                _command.CommandText = "usp_UpdateLender";
+
+                _command.Parameters.AddWithValue("@CustomerId", lender.CustomerId);
+                _command.Parameters.AddWithValue("@BookId", lender.BookId);
+                _command.Parameters.AddWithValue("@IssueDate", lender.IssueDate);
+                _command.Parameters.AddWithValue("@ReturnDate", lender.ReturnDate);
+                _command.Parameters.AddWithValue("@Penalty", lender.Penalty);
+
+                _connection.Open();
+                rowAffected = _command.ExecuteNonQuery();
+                _connection.Close();
+            }
+            return (rowAffected > 0);
+        }
+
+        public List<Book> GetBooksByLender(int id)
         {
             List<Book> bookList = new List<Book>();
 
@@ -120,7 +147,7 @@ namespace LibraryManagementSystem.DAL
             {
                 SqlCommand _command = _connection.CreateCommand();
                 _command.CommandType = CommandType.StoredProcedure;
-                _command.CommandText = "usp_GetBooksByCustomer";
+                _command.CommandText = "usp_GetBooksByLender";
                 _command.Parameters.AddWithValue("@Id", id);
 
                 _connection.Open();
@@ -132,8 +159,7 @@ namespace LibraryManagementSystem.DAL
                     {
                         Id = Convert.ToInt32(dr["Id"]),
                         ISBN = dr["ISBN"].ToString(),
-                        Title = dr["Title"].ToString(),
-                        Author = dr["Author"].ToString()
+                        Title = dr["Title"].ToString()
                     });
                 }
                 _connection.Close();
@@ -164,7 +190,7 @@ namespace LibraryManagementSystem.DAL
             return lender;
         }
 
-        public bool UpdatePenalty(int bookId, int customerId, int penalty)
+        public bool UpdatePenalty(Lender lender)
         {
             int rowAffected = 0;
 
@@ -174,9 +200,9 @@ namespace LibraryManagementSystem.DAL
                 _command.CommandType = CommandType.StoredProcedure;
                 _command.CommandText = "usp_UpdatePenalty";
 
-                _command.Parameters.AddWithValue("@BookId", bookId);
-                _command.Parameters.AddWithValue("@CustomerId", customerId);
-                _command.Parameters.AddWithValue("@Penalty", penalty);
+                _command.Parameters.AddWithValue("@BookId", lender.BookId);
+                _command.Parameters.AddWithValue("@CustomerId", lender.CustomerId);
+                _command.Parameters.AddWithValue("@Penalty", lender.Penalty);
 
                 _connection.Open();
                 rowAffected = _command.ExecuteNonQuery();

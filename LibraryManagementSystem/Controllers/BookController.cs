@@ -61,7 +61,7 @@ namespace LibraryManagementSystem.Controllers
                     return View();
                 }
             }
-            TempData["error"] = "Model state invalid";
+            TempData["error"] = "Invalid data";
             return View();
         }
 
@@ -73,7 +73,7 @@ namespace LibraryManagementSystem.Controllers
                 Book book = _dal.GetBookById(id);
                 if(book.Id == 0)
                 {
-                    TempData["error"] = $"Book id not found";
+                    TempData["error"] = "Book id not found";
                     return RedirectToAction("index");
                 }
                 return View(book);
@@ -107,7 +107,7 @@ namespace LibraryManagementSystem.Controllers
                     return View();
                 }
             }
-            TempData["error"] = "Model state invalid";
+            TempData["error"] = "Invalid data";
             return View();
         }
 
@@ -119,7 +119,7 @@ namespace LibraryManagementSystem.Controllers
                 Book book = _dal.GetBookById(id);
                 if (book.Id == 0)
                 {
-                    TempData["error"] = $"Book id not found";
+                    TempData["error"] = "Book id not found";
                     return RedirectToAction("index");
                 }
                 return View(book);

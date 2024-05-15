@@ -22,42 +22,41 @@ namespace LibraryManagementSystem.Controllers
 
         public IActionResult Index()
         {
-            var books = _bookDAL.GetAllBooks();
-            var customers = _customerDAL.GetAllCustomers();
-            var lenders = _lenderDAL.GetAllLenders();
-
-            int defaulterCount = 0;
-            int totalPenalty = 0;
-            foreach (var lender in lenders)
+            try
             {
-                if (lender.ReturnDate < DateTime.Now)
+                var books = _bookDAL.GetAllBooks();
+                var customers = _customerDAL.GetAllCustomers();
+                var lenders = _lenderDAL.GetAllLenders();
+
+                int defaulterCount = 0;
+                int totalPenalty = 0;
+                foreach (var lender in lenders)
                 {
-                    TimeSpan duration = DateTime.Now - lender.ReturnDate;
-                    double days = duration.TotalDays;
-                    lender.Penalty = (int)days * 5;
-
-                    //_context.SaveChanges();
-                    defaulterCount++;
-                    totalPenalty += lender.Penalty;
-
-                    try
+                    if (lender.ReturnDate < DateTime.Now)
                     {
-                        bool result = _lenderDAL.UpdatePenalty(lender.BookId, lender.CustomerId, lender.Penalty);
-                    }
-                    catch
-                    {
-                        TempData["error"] = "Database Exception occured";
-                        return View();
+                        TimeSpan duration = DateTime.Now - lender.ReturnDate;
+                        double days = duration.TotalDays;
+                        lender.Penalty = (int)days * 5;
+
+                        defaulterCount++;
+                        totalPenalty += lender.Penalty;
+
+                        bool result = _lenderDAL.UpdateLender(lender);
                     }
                 }
+                ViewBag.bookCount = books.Count;
+                ViewBag.customerCount = customers.Count;
+                ViewBag.issueCount = lenders.Count;
+                ViewBag.totalPenalty = totalPenalty;
+                ViewBag.defaulterCount = defaulterCount;
+                return View();
             }
+            catch (Exception)
+            {
 
-            ViewBag.bookCount = books.Count;
-            ViewBag.customerCount = customers.Count;
-            ViewBag.issueCount = lenders.Count;
-            ViewBag.totalPenalty = totalPenalty;
-            ViewBag.defaulterCount = defaulterCount;
-            return View();
+                TempData["error"] = "Database exception occured";
+                return View();
+            }
         }
 
         public IActionResult Privacy()

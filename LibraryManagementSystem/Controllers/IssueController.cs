@@ -8,14 +8,14 @@ namespace LibraryManagementSystem.Controllers
 {
     public class IssueController : Controller
     {
-        private readonly Book_DAL _book;
-        private readonly Customer_DAL _customer;
-        private readonly Lender_DAL _dal;
-        public IssueController(Book_DAL book, Customer_DAL customer, Lender_DAL dal)
+        private readonly Book_DAL _bookDAL;
+        private readonly Customer_DAL _customerDAL;
+        private readonly Lender_DAL _lenderDAL;
+        public IssueController(Book_DAL bookDAL, Customer_DAL customerDAL, Lender_DAL lenderDAL)
         {
-            _book = book;
-            _customer = customer;
-            _dal = dal;
+            _bookDAL = bookDAL;
+            _customerDAL = customerDAL;
+            _lenderDAL = lenderDAL;
         }
 
         [HttpGet]
@@ -24,8 +24,8 @@ namespace LibraryManagementSystem.Controllers
             IssueViewModel issueViewModel = new IssueViewModel();
             try
             {
-                issueViewModel.Books = _book.GetAllBooks();
-                issueViewModel.Customers = _customer.GetAllCustomers();
+                issueViewModel.Books = _bookDAL.GetAllBooks();
+                issueViewModel.Customers = _customerDAL.GetAllCustomers();
                 return View(issueViewModel);
             }
             catch
@@ -36,26 +36,40 @@ namespace LibraryManagementSystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateIssue(int customer, int book)
+        public IActionResult CreateIssue(IssueViewModel issueViewModel)
         {
-            if(customer > 0 && book > 0)
+            if (ModelState.IsValid)
             {
-                Lender lender = new Lender();
                 try
                 {
-                    lender.CustomerId = customer;
-                    lender.BookId = book;
-                    lender.IssueDate = DateTime.Now;
-                    lender.ReturnDate = lender.IssueDate.AddDays(14);
-                    lender.Penalty = 0;
-                    bool result = _dal.AddLender(lender);
-                    if (!result)
+                    var book = _bookDAL.GetBookById(issueViewModel.SelectedBook);
+                    if (book.Quantity > 0)
                     {
-                        TempData["error"] = "Book already issued. No duplicate issue allowed";
+                        Lender lender = new Lender();
+                        lender.CustomerId = issueViewModel.SelectedCustomer;
+                        lender.BookId = issueViewModel.SelectedBook;
+                        lender.IssueDate = DateTime.Now;
+                        lender.ReturnDate = lender.IssueDate.AddDays(14);
+                        lender.Penalty = 0;
+                        bool result = _lenderDAL.AddLender(lender);
+                        if (result)
+                        {
+                            book.Quantity = (book.Quantity) - 1;
+                            bool QuantityUpdate = _bookDAL.UpdateBook(book);
+                            TempData["success"] = "Book issued successfully";
+                            return RedirectToAction("Index");
+                        }
+                        else
+                        {
+                            TempData["error"] = "Book already issued. No duplicate issue allowed";
+                            return RedirectToAction("Index");
+                        }
+                    }
+                    else
+                    {
+                        TempData["error"] = "Book out of stock";
                         return RedirectToAction("Index");
                     }
-                    TempData["success"] = "Book issued successfully";
-                    return RedirectToAction("Index");
                 }
                 catch
                 {
@@ -63,7 +77,7 @@ namespace LibraryManagementSystem.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            TempData["error"] = "Not found";
+            TempData["error"] = "Please select customer and book";
             return RedirectToAction("Index");
         }
     }

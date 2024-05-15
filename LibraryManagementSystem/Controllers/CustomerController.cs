@@ -62,7 +62,7 @@ namespace LibraryManagementSystem.Controllers
                     return View();
                 }
             }
-            TempData["error"] = "Model state invalid";
+            TempData["error"] = "Invalid data";
             return View();
         }
 
@@ -74,7 +74,7 @@ namespace LibraryManagementSystem.Controllers
                 Customer customer = _dal.GetCustomerById(id);
                 if (customer.Id == 0)
                 {
-                    TempData["error"] = $"Customer id not found";
+                    TempData["error"] = "Customer id not found";
                     return RedirectToAction("index");
                 }
                 return View(customer);
@@ -120,7 +120,7 @@ namespace LibraryManagementSystem.Controllers
                 Customer customer = _dal.GetCustomerById(id);
                 if (customer.Id == 0)
                 {
-                    TempData["error"] = $"Customer id not found";
+                    TempData["error"] = "Customer id not found";
                     return RedirectToAction("index");
                 }
                 return View(customer);
@@ -154,7 +154,7 @@ namespace LibraryManagementSystem.Controllers
                     return View();
                 }
             }
-            TempData["error"] = "Model state invalid";
+            TempData["error"] = "Invalid data";
             return View();
         }
 

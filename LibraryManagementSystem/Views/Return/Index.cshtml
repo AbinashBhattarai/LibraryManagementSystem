@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Mvc.Rendering;
+﻿@model IssueViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering;
 
 @{
     ViewData["Title"] = "Return Book";
@@ -11,13 +12,13 @@
         <form method="post" asp-controller="Return" asp-action="RemoveLender" class="form-control pb-3">
             <div class="mb-3">
                 <label for="Customer" class="fs-5 fw-bold">Customer</label>
-                <select name="Customer" id="Customer" class="fs-5 p-2 text-uppercase w-100 mb-3">
+                <select asp-for="SelectedCustomer" id="Customer" class="fs-5 p-2 text-uppercase w-100 mb-3">
                     <option>---Select Customer---</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="Book" class="fs-5 fw-bold">Book</label>
-                <select name="Book" id="Book" class="fs-5 p-2 text-uppercase w-100 mb-3">
+                <select asp-for="SelectedBook" id="Book" class="fs-5 p-2 text-uppercase w-100 mb-3">
                 </select>
             </div>
             <div class="mb-3">
@@ -44,7 +45,7 @@
                 fetch()
                 $.ajax({
                     type: 'GET',
-                    url: '/Return/GetBookByCustomer?id='+id,
+                    url: '/Return/GetBooksByLender?id='+id,
                     success: function (result) {
                         $.each(result, function (key, data) {
                             $('#Book').append('<Option value="'+data.Id+'">'+data.ISBN+' ('+data.Title+')</Option>')

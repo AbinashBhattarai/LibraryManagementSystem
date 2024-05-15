@@ -53,6 +53,12 @@
                         Book Title
                     </td>
                     <td>
+                        Issue Date
+                    </td>
+                    <td>
+                        Return Date
+                    </td>
+                    <td>
                         Penalty
                     </td>
                 </tr>
@@ -75,6 +81,12 @@
                         </td>
                         <td>
                             @Model[i].Title?.ToUpper()
+                        </td>
+                        <td>
+                            @Model[i].IssueDate
+                        </td>
+                        <td>
+                            @Model[i].ReturnDate
                         </td>
                         <td>
                             @Model[i].Penalty

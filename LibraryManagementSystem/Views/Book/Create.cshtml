@@ -31,6 +31,11 @@
             <input asp-for="Author" class="form-control fs-5 text-uppercase" />
             <span asp-validation-for="Author" class="text-danger fw-normal"></span>
         </div>
+        <div class="mb-3">
+            <label asp-for="Quantity" class="p-1 fs-5"></label>
+            <input asp-for="Quantity" class="form-control fs-5" />
+            <span asp-validation-for="Quantity" class="text-danger fw-normal"></span>
+        </div>
         <button type="submit" class="btn btn-secondary">Add Book</button>
     </form>
 </div>

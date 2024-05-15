@@ -11,14 +11,14 @@
     <div class="m-3 border rounded-3 shadow-lg w-50 mx-auto p-4">
         <form method="post" asp-controller="Issue" asp-action="CreateIssue" class="form-control pb-3">
             <div class="mb-3">
-                <label asp-for="Customers" class="fs-5 fw-bold"></label>
-                <select name="Customer" id="Customer" asp-items="@(new SelectList (Model.Customers, "Id", "Code"))" class="fs-5 p-2 text-uppercase w-100 mb-3">
-                    <option>---Select Customer</option>
+                <label asp-for="SelectedCustomer" class="fs-5 fw-bold"></label>
+                <select asp-for="SelectedCustomer" asp-items="@(new SelectList (Model.Customers, "Id", "Code"))" class="fs-5 p-2 text-uppercase w-100 mb-3">
+                    <option>---Select Customer---</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label asp-for="Books" class="fs-5 fw-bold"></label>
-                <select name="Book" id="Book" asp-items="@(new SelectList (Model.Books, "Id", "ISBN"))" class="fs-5 p-2 text-uppercase w-100 mb-3">
+                <label asp-for="SelectedBook" class="fs-5 fw-bold"></label>
+                <select asp-for="SelectedBook" asp-items="@(new SelectList (Model.Books, "Id", "ISBN"))" class="fs-5 p-2 text-uppercase w-100 mb-3">
                     <option>---Select Book</option>
                 </select>
             </div>

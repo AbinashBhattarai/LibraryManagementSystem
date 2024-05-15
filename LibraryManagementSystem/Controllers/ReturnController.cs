@@ -7,14 +7,14 @@ namespace LibraryManagementSystem.Controllers
 {
     public class ReturnController : Controller
     {
-        private readonly Book_DAL _book;
-        private readonly Customer_DAL _customer;
-        private readonly Lender_DAL _dal;
-        public ReturnController(Book_DAL book, Customer_DAL customer, Lender_DAL dal)
+        private readonly Book_DAL _bookDAL;
+        private readonly Customer_DAL _customerDAL;
+        private readonly Lender_DAL _lenderDAL;
+        public ReturnController(Book_DAL bookDAL, Customer_DAL customerDAL, Lender_DAL lenderDAL)
         {
-            _book = book;
-            _customer = customer;
-            _dal = dal;
+            _bookDAL = bookDAL;
+            _customerDAL = customerDAL;
+            _lenderDAL = lenderDAL;
         }
 
         public IActionResult Index()
@@ -26,28 +26,26 @@ namespace LibraryManagementSystem.Controllers
         {
             try
             {
-                var customers = _customer.GetAllCustomers();
+                var customers = _customerDAL.GetAllCustomers();
                 return new JsonResult(customers);
             }
             catch
             {
-                TempData["error"] = "Database exception occured";
                 return new JsonResult("");
             }
         }
 
         [HttpGet]
-        public JsonResult GetBookByCustomer(int id)
+        public JsonResult GetBooksByLender(int id)
         {
             try
             {
-                var books = _dal.GetBookByCustomer(id);
+                var books = _lenderDAL.GetBooksByLender(id);
                 return new JsonResult(books);
             }
             catch
             {
-                TempData["error"] = "Database exception occured";
-                return new JsonResult("");
+                return new JsonResult ("");
             }
         }
 
@@ -57,30 +55,36 @@ namespace LibraryManagementSystem.Controllers
         {
             try
             {
-                var penalty = _dal.GetPenaltyById(customerId, bookId);
+                var penalty = _lenderDAL.GetPenaltyById(customerId, bookId);
                 return new JsonResult(penalty);
             }
             catch
             {
-                TempData["error"] = "Database exception occured";
                 return new JsonResult("");
             }
         }
 
         [HttpPost]
-        public IActionResult RemoveLender(int customer, int book)
+        public IActionResult RemoveLender(IssueViewModel issueViewModel)
         {
-            if (customer > 0 && book > 0)
+            if (ModelState.IsValid)
             {
                 try
                 {
-                    bool result = _dal.DeleteLender(customer, book);
-                    if (!result)
+                    Lender lender = new Lender();
+                    lender.CustomerId = issueViewModel.SelectedCustomer;
+                    lender.BookId = issueViewModel.SelectedBook;
+                    bool result = _lenderDAL.DeleteLender(lender);
+                    if (result)
                     {
-                        TempData["error"] = "Cannot return the book";
+                        var book = _bookDAL.GetBookById(issueViewModel.SelectedBook);
+                        book.Quantity = (book.Quantity) + 1;
+                        bool QuantityUpdate = _bookDAL.UpdateBook(book);
+
+                        TempData["success"] = "Book Returned successfully";
                         return RedirectToAction("Index");
                     }
-                    TempData["success"] = "Book Returned successfully";
+                    TempData["error"] = "Cannot return the book";
                     return RedirectToAction("Index");
                 }
                 catch
@@ -89,7 +93,7 @@ namespace LibraryManagementSystem.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            TempData["error"] = "Not found";
+            TempData["error"] = "Invalid data";
             return RedirectToAction("Index");
         }
     }
