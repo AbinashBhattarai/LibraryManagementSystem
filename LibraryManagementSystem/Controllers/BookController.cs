@@ -68,21 +68,26 @@ namespace LibraryManagementSystem.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            try
+            if (id != 0)
             {
-                Book book = _dal.GetBookById(id);
-                if(book.Id == 0)
+                try
                 {
-                    TempData["error"] = "Book id not found";
-                    return RedirectToAction("index");
+                    Book book = _dal.GetBookById(id);
+                    if (book == null)
+                    {
+                        TempData["error"] = "Book not found";
+                        return RedirectToAction("index");
+                    }
+                    return View(book);
                 }
-                return View(book);
+                catch
+                {
+                    TempData["error"] = "Database exception occured";
+                    return View();
+                }
             }
-            catch
-            {
-                TempData["error"] = "Database exception occured";
-                return View() ;
-            }
+            TempData["error"] = "Book id not valid";
+            return View();
         }
 
         [HttpPost]
@@ -114,21 +119,26 @@ namespace LibraryManagementSystem.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            try
+            if (id != 0)
             {
-                Book book = _dal.GetBookById(id);
-                if (book.Id == 0)
+                try
                 {
-                    TempData["error"] = "Book id not found";
-                    return RedirectToAction("index");
+                    Book book = _dal.GetBookById(id);
+                    if (book == null)
+                    {
+                        TempData["error"] = "Book not found";
+                        return RedirectToAction("index");
+                    }
+                    return View(book);
                 }
-                return View(book);
+                catch
+                {
+                    TempData["error"] = "Database exception occured";
+                    return View();
+                }
             }
-            catch
-            {
-                TempData["error"] = "Database exception occured";
-                return View();
-            }
+            TempData["error"] = "Book id not valid";
+            return View();
         }
 
         [HttpPost, ActionName("Delete")]
@@ -153,7 +163,7 @@ namespace LibraryManagementSystem.Controllers
                     return View();
                 }
             }
-            TempData["error"] = "Model state invalid";
+            TempData["error"] = "Invalid data";
             return View();
         }
 

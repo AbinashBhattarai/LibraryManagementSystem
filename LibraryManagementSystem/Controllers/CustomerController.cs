@@ -69,21 +69,26 @@ namespace LibraryManagementSystem.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            try
+            if (id != 0)
             {
-                Customer customer = _dal.GetCustomerById(id);
-                if (customer.Id == 0)
+                try
                 {
-                    TempData["error"] = "Customer id not found";
-                    return RedirectToAction("index");
+                    Customer customer = _dal.GetCustomerById(id);
+                    if (customer.Id == 0)
+                    {
+                        TempData["error"] = "Customer id not found";
+                        return RedirectToAction("index");
+                    }
+                    return View(customer);
                 }
-                return View(customer);
+                catch
+                {
+                    TempData["error"] = "Database exception occured";
+                    return View();
+                }
             }
-            catch
-            {
-                TempData["error"] = "Database exception occured";
-                return View();
-            }
+            TempData["error"] = "Customer id not valid";
+            return View();
         }
 
         [HttpPost]
@@ -108,28 +113,33 @@ namespace LibraryManagementSystem.Controllers
                     return View();
                 }
             }
-            TempData["error"] = "Model state invalid";
+            TempData["error"] = "Invalid data";
             return View();
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            try
+            if (id != 0)
             {
-                Customer customer = _dal.GetCustomerById(id);
-                if (customer.Id == 0)
+                try
                 {
-                    TempData["error"] = "Customer id not found";
-                    return RedirectToAction("index");
+                    Customer customer = _dal.GetCustomerById(id);
+                    if (customer.Id == 0)
+                    {
+                        TempData["error"] = "Customer id not found";
+                        return RedirectToAction("index");
+                    }
+                    return View(customer);
                 }
-                return View(customer);
+                catch
+                {
+                    TempData["error"] = "Database exception occured";
+                    return View();
+                }
             }
-            catch
-            {
-                TempData["error"] = "Database exception occured";
-                return View();
-            }
+            TempData["error"] = "Customer id not valid";
+            return View();
         }
 
         [HttpPost, ActionName("Delete")]

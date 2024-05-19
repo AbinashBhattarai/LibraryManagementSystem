@@ -11,9 +11,9 @@ builder.Services.AddControllersWithViews()
     jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
 });
 
-builder.Services.AddSingleton<Book_DAL>();
-builder.Services.AddSingleton<Customer_DAL>();
-builder.Services.AddSingleton<Lender_DAL>();
+builder.Services.AddScoped<Book_DAL>();
+builder.Services.AddScoped<Customer_DAL>();
+builder.Services.AddScoped<Lender_DAL>();
 
 
 var app = builder.Build();
